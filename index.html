@@ -8,10 +8,29 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
-  <title>Greg's List</title>
+  <title>Gregslist</title>
 </head>
 
 <body>
+  <section class="container-fluid">
+    <header class="row">
+      <div class="col text-center">
+        <h1>WELCOME TO GREGSLIST</h1>
+      </div>
+    </header>
+    <section>
+      <form onsubmit="app.controllers.houseController.addHouse(event)">
+        <input type="text" name="title" placeholder="Title" required>
+        <input type="text" name="description" placeholder="Description" required>
+        <input type="number" name="price" placeholder="Price" required>
+        <input type="url" name="img" placeholder="Image" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <main class="row" id="available-houses">
+
+    </main>
+  </section>
 
 
 
