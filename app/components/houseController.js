@@ -6,11 +6,11 @@ let _hs = new HouseService()
 
 function draw() {
   let houses = _hs.Houses
-  let houseTemplate = ''
+  let template = ''
   houses.forEach(house => {
-    houseTemplate += house.getHouseTemplate()
+    template += house.getTemplate()
   });
-  document.getElementById('available-houses').innerHTML = houseTemplate
+  document.getElementById('available-houses').innerHTML = template
 }
 
 function logHouses() {
@@ -42,7 +42,7 @@ export default class HouseController {
     form.reset()
 
   }
-  deleteHouse(houseId) {
-    _hs.deleteHouse(houseId)
+  deleteHouse(id) {
+    _hs.deleteHouse(id)
   }
 }
