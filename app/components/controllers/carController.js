@@ -1,14 +1,14 @@
+//PRIVATE
 import CarService from "../services/carService.js";
 
-//Private
 let _cs = new CarService()
 
 
 function draw() {
   let cars = _cs.Cars
   let template = ''
-  cars.forEach(car => {
-    template += car.getTemplate()
+  cars.forEach(c => {
+    template += c.getTemplate()
   });
   document.getElementById('available-content').innerHTML = template
   document.getElementById('form-content').innerHTML = `            
@@ -24,10 +24,10 @@ function draw() {
 }
 
 function logCars() {
-  console.log("cars UPDATED!!!")
+  console.log("Cars UPDATED!!!")
 }
 
-//Public
+//PUBLIC
 export default class CarController {
   constructor() {
     _cs.addSubscriber('cars', draw)
@@ -42,18 +42,19 @@ export default class CarController {
       make: form.make.value,
       model: form.model.value,
       year: form.year.value,
-      price: form.price.value,
       description: form.description.value,
+      price: form.price.value,
       imgUrl: form.imgUrl.value
     }
     _cs.addCar(newCar)
     //Clears the form
     form.reset()
-
   }
+
   deleteCar(id) {
     _cs.deleteCar(id)
   }
+
   bid(id) {
     _cs.bid(id)
   }
