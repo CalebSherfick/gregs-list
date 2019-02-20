@@ -16,8 +16,8 @@ export default class House {
         <div class="card-body">
             <h5 class="card-title">${this.year} ${this.bedrooms}bed - ${this.bathrooms}bath</h5>
             <p class="card-text">${this.description} -- $${this.price}</p>
-            <button onclick="app.controllers.carController.bid('${this._id}')">BID</button>
-                <button onclick="app.controllers.carController.deleteCar('${this._id}')">Remove</button>
+            <button onclick="app.controllers.houseController.bid('${this._id}')">BID</button>
+                <button onclick="app.controllers.houseController.deleteHouse('${this._id}')">Remove</button>
         </div>
     </div>
     `

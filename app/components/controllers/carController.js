@@ -23,10 +23,6 @@ function draw() {
     </form>`
 }
 
-function logCars() {
-  console.log("Cars UPDATED!!!")
-}
-
 //PUBLIC
 export default class CarController {
   constructor() {

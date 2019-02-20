@@ -11,9 +11,9 @@ function draw() {
   })
   document.getElementById('available-content').innerHTML = template
   document.getElementById('form-content').innerHTML = `
-    <form onsubmit="app.controllers.carController.addCar(event)">
-        <input type="number" name="beds" placeholder="Beds" required>
-        <input type="number" name="bath" placeholder="Bath" required>
+    <form onsubmit="app.controllers.houseController.addHouse(event)">
+        <input type="number" name="bedrooms" placeholder="Bedrooms" required>
+        <input type="number" name="bathrooms" placeholder="Bathrooms" required>
         <input type="number" name="levels" placeholder="Levels" required>
         <input type="number" name="year" placeholder="Year" required>
         <input type="text" name="description" placeholder="Description">
@@ -23,15 +23,10 @@ function draw() {
     </form>`
 }
 
-function logHouses() {
-  console.log("Houses UPDATED!!!")
-}
-
 //PUBLIC
 export default class HouseController {
   constructor() {
     _hs.addSubscriber('houses', draw)
-    _hs.getApiHouses()
   }
 
   //IN ANY FORM SUBMISSION DO NOT FORGET TO PREVENT THE DEFAULT ACTION
@@ -39,8 +34,8 @@ export default class HouseController {
     event.preventDefault();
     let form = event.target
     let newHouse = {
-      beds: form.beds.value,
-      bath: form.bath.value,
+      bedrooms: form.bedrooms.value,
+      bathrooms: form.bathrooms.value,
       levels: form.levels.value,
       year: form.year.value,
       description: form.description.value,

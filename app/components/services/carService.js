@@ -1,5 +1,6 @@
-//PRIVATE
 import Car from "../../models/car.js";
+
+//PRIVATE
 
 // @ts-ignore
 let _api = axios.create({

@@ -31,7 +31,7 @@ export default class HouseService {
     return _state.houses.map(h => new House(h))
   }
 
-  //Initialize or Get all Current Cars
+  //Initialize or Get all Current Houses
   getApiHouses() {
     _api.get('houses')
       .then(res => {
