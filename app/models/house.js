@@ -1,24 +1,23 @@
-let id = 1
-
 export default class House {
   constructor(data) {
-    this.id = id
+    this._id = data._id
+    this.bedrooms = data.bedrooms
+    this.bathrooms = data.bathrooms
+    this.imgUrl = data.imgUrl
+    this.levels = data.levels
+    this.year = data.year
     this.price = data.price
-    this.title = data.title
-    this.img = data.img
-    this.description = data.description || 'No Description Provided'
-    id++
+    this.description = data.description
   }
-
   getTemplate() {
-    return `<div class="card col-3" >
-      <img class="card-img-top" src = "${this.img}" alt = "Card image cap" >
+    return `
+        <div class="card col-3">
+        <img class="card-img-top" src="${this.imgUrl}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">${this.title}</h5>
-          <p class="card-text">${this.description} -- $${this.price}</p>
-          <button onclick="app.controllers.houseController.deleteHouse(${this.id})">Buy Now</button>
+            <h5 class="card-title">${this.year} ${this.bedrooms}bed - ${this.bathrooms}bath</h5>
+            <p class="card-text">${this.description} -- $${this.price}</p>
         </div>
-        </div >`
-
+    </div>
+    `
   }
 }

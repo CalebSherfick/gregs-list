@@ -8,63 +8,31 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/style.css">
-  <title>Gregslist</title>
+  <title>JUNK SELLER</title>
 </head>
 
 <body>
   <section class="container-fluid">
-
     <header class="row">
       <div class="col text-center">
-        <h1>WELCOME TO GREGSLIST</h1>
-        <h3>BUY A HOUSE</h3>
+        <h1>WELCOME TO JUNK SELLER</h1>
       </div>
     </header>
+    <div>
+      <button onclick="app.controllers.carController.getCars()">CARS</button>
+      <button onclick="app.controllers.houseController.getHouses()">HOUSES</button>
+    </div>
+    <section id="form-content">
 
-    <section class="row">
-      <div class="col-md-12 d-flex justify-content-center">
-        <form onsubmit="app.controllers.houseController.addHouse(event)">
-          <input type="text" name="title" placeholder="Title" required>
-          <input type="text" name="description" placeholder="Description" required>
-          <input type="number" name="price" placeholder="Price" required>
-          <input type="url" name="img" placeholder="Image" required>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
     </section>
-    <main class="row justify-content-center" id="available-houses">
-    </main>
-
-
-
-    <header class="row">
-      <div class="col text-center">
-        <h3>BUY A CAR</h3>
-      </div>
-    </header>
-
-    <section class="row">
-      <div class="col-md-12 d-flex justify-content-center">
-        <form onsubmit="app.controllers.carController.addCar(event)">
-          <input type="text" name="title" placeholder="Title" required>
-          <input type="text" name="description" placeholder="Description">
-          <input type="number" name="price" placeholder="Price" required>
-          <input type="url" name="img" placeholder="Image" required>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </section>
-
-
-    <main class="row justify-content-center" id="available-cars">
+    <main class="row" id="available-content">
 
     </main>
   </section>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 
   <script type="module" src="app/main.js"></script>
-  </section>
 </body>
 
 </html>
