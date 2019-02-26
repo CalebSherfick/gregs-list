@@ -4,7 +4,7 @@ import Car from "../../models/car.js";
 
 // @ts-ignore
 let _api = axios.create({
-  baseURL: 'https://bcw-gregslist.herokuapp.com/api'
+  baseURL: '//localhost:3000/api'
 })
 
 let _state = {
@@ -36,7 +36,7 @@ export default class CarService {
   getApiCars() {
     _api.get('cars')
       .then(res => {
-        let carData = res.data.data.map(c => new Car(c))
+        let carData = res.data.map(c => new Car(c))
         setState('cars', carData)
       })
   }

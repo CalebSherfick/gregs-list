@@ -3,7 +3,7 @@ import House from "../../models/house.js";
 
 // @ts-ignore
 let _api = axios.create({
-  baseURL: 'https://bcw-gregslist.herokuapp.com/api'
+  baseURL: '//localhost:3000/api'
 })
 
 let _state = {
@@ -35,7 +35,7 @@ export default class HouseService {
   getApiHouses() {
     _api.get('houses')
       .then(res => {
-        let data = res.data.data.map(h => new House(h))
+        let data = res.data.map(h => new House(h))
         setState('houses', data)
       })
   }
